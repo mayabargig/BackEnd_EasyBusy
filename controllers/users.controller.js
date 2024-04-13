@@ -92,6 +92,23 @@ const getDetailToken = async (req, res)=>{
     }
 };
 
+const uploadUserImage = async(req ,res)=>{
+    try{
+        const data = await uploadToCloudinary(req.file.path , "user-images")
+        //Save Image Url and PubliId to the database
+        const saveImg = await User.findByIdAndUpdate(
+            {_id: req.params.id},
+            {
+                $set: {
+                    profileImg: data.url,
+                },
+            }
+        );
+        res.status(200).send("user image upladed with success!")
+    }catch(err){
+        res.status(400).send(err)
+    }
+}
 
 
 module.exports = { login, register, updatedUser, getUsers, deleteUser, getDetailToken};

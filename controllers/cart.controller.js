@@ -1,10 +1,10 @@
 const { Cart } = require("../models/cart.model");
 
 const getCart = async (req, res) => {
+    const { userId } = req.params;
+
     try {
-        const query = req.query;
-        console.log({query});
-        const cart = await Cart.find({...query});
+        const cart = await Cart.find({ userId }).populate("userId");
         res.send(cart);
     } catch (error) {
         console.log(error);

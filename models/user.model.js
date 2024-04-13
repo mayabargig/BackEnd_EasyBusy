@@ -64,7 +64,10 @@ const userSchema = new mongoose.Schema({
     product:{
             type: mongoose.Types.ObjectId,
             ref: "Product"
-            }
+            },
+    profileImg:{
+        type:String
+    },
 });
 
 const User = mongoose.model("User", userSchema);

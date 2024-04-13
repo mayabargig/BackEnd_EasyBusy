@@ -3,7 +3,7 @@ const { Router } = require("express");
 const { auth } = require("../middlewares/auth");
 const router = Router();
 
-router.get("/", getCart); 
+router.get("/:userId", getCart); 
 router.get("/:id", getSingleCart); 
 router.post("/", addToCart);
 router.patch("/:id", updateCart);
