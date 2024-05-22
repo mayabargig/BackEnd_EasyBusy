@@ -13,7 +13,12 @@ const cartRouter = require("./routes/cart.routes")
 const cors = require("cors");
 
 const app = express();
-app.use(cors());//option to add origin to specific address- white list //ip{"https://..."}
+const corsOptions = {
+    origin: 'https://mayabargig.github.io',
+    optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/v1/users", usersRouter);
