@@ -13,12 +13,13 @@ const cartRouter = require("./routes/cart.routes")
 const cors = require("cors");
 
 const app = express();
-const corsOptions = {
-    origin: 'https://mayabargig.github.io',
-    optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+app.use(cors(
 
-app.use(cors(corsOptions));
+    {
+        origin: ['https://mayabargig.github.io', 'https://easy-busy-50e71066dde3.herokuapp.com'],
+        optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+    }
+));
 app.use(express.json());
 
 app.use("/api/v1/users", usersRouter);
