@@ -15,6 +15,7 @@ const getUsers = async(req, res)=>{
 
 const login = async(req, res)=>{
     const { email, password } = req.body;
+    console.log(req.body);
 
     try {
         const user = await User.findOne({ email });
