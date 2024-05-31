@@ -17,12 +17,12 @@ const allowedOrigins = [
     'https://mayabargig.github.io',
     'https://easy-busy-50e71066dde3.herokuapp.com'
 ];
-const checkOrigins = false //  process.env.NODE_ENV === 'production';
+const checkOrigins = process.env.NODE_ENV === 'production';
 app.use(cors({
     origin: checkOrigins ? (origin, callback) => {
         // Allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
-        console.log('origin: ',origin)
+        console.log('origin: ', origin)
         if (!allowedOrigins.some(i => origin?.startsWith(i))) {
             const msg = 'The CORS policy for this site does not allow access from the specified origin.';
             return callback(new Error(msg), false);
