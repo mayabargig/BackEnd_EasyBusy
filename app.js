@@ -22,7 +22,7 @@ app.use(cors({
     origin: isProduction ? (origin, callback) => {
         // Allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) === -1) {
+        if (!allowedOrigins.some(i => origin?.startsWith(i))) {
             const msg = 'The CORS policy for this site does not allow access from the specified origin.';
             return callback(new Error(msg), false);
         }
