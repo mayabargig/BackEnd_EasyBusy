@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const getUsers = async(req, res)=>{
     try{
         const users = await User.find({});
-        res.send(users);
+        res.send("users", users);
     }catch(error){
         console.log(error);
         res.status(400).send("Error");
