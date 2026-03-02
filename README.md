@@ -13,7 +13,7 @@ Provides REST API endpoints for managing users, appointments and authentication.
 
 ## 📦 Installation
 Clone the repository:
-```bash
+</>Bash
 git clone https://github.com/your-username/BackEnd_EasyBusy.git
 cd BackEnd_EasyBusy
 
