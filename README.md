@@ -18,6 +18,7 @@ git clone https://github.com/your-username/BackEnd_EasyBusy.git
 cd BackEnd_EasyBusy
 
 Install dependencies:
+</>Bash
 npm install
 
 🔐 Environment Variables
