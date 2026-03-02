@@ -13,12 +13,12 @@ Provides REST API endpoints for managing users, appointments and authentication.
 
 ## 📦 Installation
 Clone the repository:
-</>Bash
+</>Code
 git clone https://github.com/your-username/BackEnd_EasyBusy.git
 cd BackEnd_EasyBusy
 
 Install dependencies:
-</>Bash
+</>Code
 npm install
 
 🔐 Environment Variables
