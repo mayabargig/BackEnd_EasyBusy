@@ -65,7 +65,7 @@ Server will run on:
 http://localhost:5000
 ```
 
-API Base URL:
+API  URL:
 
 ```bash
 /api/v1
