@@ -48,4 +48,9 @@ app.use("/api/v1/payment", paymentRouter);
 app.use("/api/v1/appointment", appointmentRouter);
 app.use("/api/v1/cart", cartRouter);
 
+app.post("/api/v1/log-error", (req, res) => {
+    console.log("Frontend error received:", req.body);
+    res.status(200).json({ message: "Error logged (dummy)" });
+});
+
 module.exports = { app };
