@@ -53,4 +53,30 @@ app.post("/api/v1/log-error", (req, res) => {
     res.status(200).json({ message: "Error logged (dummy)" });
 });
 
+// Test 
+const corsOptions = {
+    origin: function (origin, callback) {
+        // allow requests from GitHub Pages + Heroku frontend
+        const allowed = [
+            "https://mayabargig.github.io",
+            "https://easybusy-c9c0af9251be.herokuapp.com"
+        ];
+        // אם אין origin (לדוגמה מ־curl או mobile), אפשר לאפשר
+        if (!origin) return callback(null, true);
+        if (allowed.indexOf(origin) !== -1) {
+            return callback(null, true);
+        } else {
+            return callback(new Error("Not allowed by CORS"), false);
+        }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+// חובה – כדי לאפשר preflight request:
+app.options("*", cors(corsOptions));
+
 module.exports = { app };
