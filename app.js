@@ -15,7 +15,7 @@ const app = express();
 // Specify allowed origins
 const allowedOrigins = [
     'https://mayabargig.github.io',
-    'https://easy-busy-50e71066dde3.herokuapp.com'
+    'https://easybusy-c9c0af9251be.herokuapp.com'
 ];
 const checkOrigins = process.env.NODE_ENV === 'production';
 app.use(cors({
@@ -30,7 +30,7 @@ app.use(cors({
         return callback(null, true);
     } : '*',
     // origin: 'https://mayabargig.github.io',
-    // origin: 'https://easy-busy-50e71066dde3.herokuapp.com',
+    // origin: 'https://easybusy-c9c0af9251be.herokuapp.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],    // Allow specific HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
     credentials: true, // Allow cookies to be sent
