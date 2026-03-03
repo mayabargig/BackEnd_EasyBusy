@@ -17,7 +17,8 @@ const allowedOrigins = [
     'https://mayabargig.github.io',
     'https://easybusy-c9c0af9251be.herokuapp.com'
 ];
-const checkOrigins = process.env.NODE_ENV === 'production';
+
+const checkOrigins = process.env.NODE_ENV === 'production' || false;
 app.use(cors({
     origin: checkOrigins ? (origin, callback) => {
         // Allow requests with no origin (like mobile apps or curl requests)
